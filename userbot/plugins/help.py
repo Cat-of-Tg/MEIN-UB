@@ -12,14 +12,14 @@ cmdprefix = Config.COMMAND_HAND_LER
 plugin_category = "tools"
 
 hemojis = {
-    "admin": "👮‍♂️",
-    "bot": "🤖",
-    "fun": "🎨",
-    "misc": "🧩",
-    "tools": "🧰",
-    "utils": "🗂",
-    "extra": "➕",
-    "useless": "⚰️",
+    "ᴀᴅᴍɪɴ": "✘",
+    "ʙᴏᴛ": "✘",
+    "ғᴜɴ": "✘",
+    "ᴍɪᴤᴄ": "✘",
+    "ᴛᴏᴏʟᴤ": "✘",
+    "ᴜᴛɪʟᴤ": "✘",
+    "ᴇxᴛʀᴀ": "✘",
+    "ᴜᴤᴇʟᴇᴤᴤ": "✘",
 }
 
 
@@ -92,14 +92,14 @@ async def plugininfo(input_str, event, flag):
             outstr += f"**➥ Info :** __{CMD_INFO[cmd][1]}__\n\n"
         except IndexError:
             outstr += "**➥ Info :** `None`\n\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <command name>`\
+    outstr += f"** Usage : ** `{cmdprefix}help <command name>`\
         \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help -c <command name>`."
     return outstr
 
 
 async def grpinfo():
     outstr = "**Plugins in Catuserbot are:**\n\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
+    outstr += f"** Usage : ** `{cmdprefix}help <plugin name>`\n\n"
     category = ["admin", "bot", "fun", "misc", "tools", "utils", "extra", "useless"]
     for cat in category:
         plugins = GRP_INFO[cat]
@@ -122,7 +122,7 @@ async def cmdlist():
             for cmd in sorted(cmds):
                 outstr += f"  - `{cmdprefix}{cmd}`\n"
             outstr += "\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
+    outstr += f"**Usage : ** `{cmdprefix}help -c <command name>`"
     return outstr
 
 
@@ -195,7 +195,7 @@ async def _(event):
         outstr = f"**✘ {input_str.title()} has {len(cmds)} commands**\n"
         for cmd in cmds:
             outstr += f"  - `{cmdprefix}{cmd}`\n"
-        outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
+        outstr += f"** Usage : ** `{cmdprefix}help -c <command name>`"
     await edit_or_reply(
         event, outstr, aslink=True, linktext="Total Commands of Catuserbot are :"
     )
